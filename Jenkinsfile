@@ -129,15 +129,15 @@ spec:
         anchore name: 'anchore_images'
       }
     }
-//    stage('Approval') {
-//      input {
-//        message "Proceed to deploy?"
-//        ok "YES"
-//      }
-//      steps {
-//        echo "Update helm chart to trigger GitOps-based deployment..."
-//      }
-//    }    
+    stage('Approval') {
+      input {
+        message "Proceed to deploy?"
+        ok "YES"
+      }
+      steps {
+        echo "Update helm chart to trigger GitOps-based deployment..."
+      }
+    }    
     stage('GitOps-based Deploy') {
       steps {
         container('maven') {
